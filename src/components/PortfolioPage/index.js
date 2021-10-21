@@ -33,7 +33,7 @@ export default function PortfolioPage() {
 
       setTranslateY(`${newTranslateY}%`)
 
-      const topScroll = window.scrollY > 3118;
+      const topScroll = window.scrollY > 3600;
       console.log("ssdsdfdf", topScroll)
       topScroll ? setScroll(true) : setScroll(false);
     }
