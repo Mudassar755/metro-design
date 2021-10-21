@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 120px;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+
+  font-family: "Martel", serif;
+}
+
+.logo {
+  flex: 1;
+  display: flex;
+  justify-content: start;
+}
+
+.visibleBg {
+  /* background-color: #fff; */
+  --linkColor: #000;
+}
+
+.transparentBg {
+  background-color: transparent;
+  --linkColor: #000;
+}
+
+.menuItems {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  font-size: 14px;
+  color: #000000;
+}
+
+.menuItems a:not(:last-child) {
+  margin-right: 20px;
+}
+
+.contact {
+  border: solid black 1px;
+  padding: 5px 10px;
+  margin-left: 20px;
+}
+
+/* Mobile-responsiveness */
+
+@media only screen and (max-width: 720px) {
+  header {
+    padding: 30px 12px;
+  }
+
+  a {
+    margin: 0;
+  }
+
+  .projects {
+    margin-right: 0px;
+  }
+
+  .menuItems a:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .aboutUs {
+    display: none;
+  }
+}
+
+/* ANIMATIONS */
+
+/* Underline effect on the navbar */
+
+.projects {
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) bottom / 0 0.1em
+    no-repeat;
+  transition: 0.3s background-size;
+  background-position: left bottom;
+  color: var(--linkColor);
+  bottom: -4px;
+}
+
+.projects:hover {
+  background-size: 100% 0.1em;
+}
+
+.aboutUs {
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) bottom / 0 0.1em
+    no-repeat;
+  transition: 0.3s background-size;
+  background-position: left bottom;
+  color: var(--linkColor);
+  bottom: -4px;
+}
+
+.aboutUs:hover {
+  background-size: 100% 0.1em;
+}

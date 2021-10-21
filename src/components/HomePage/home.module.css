@@ -1,0 +1,101 @@
+.home {
+  height: 90vh;
+  position: relative;
+}
+
+.home::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  background-color: #0d0d0d;
+}
+.home img {
+  object-position: 0px -346px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* General */
+
+.title {
+  font-family: "Martel", serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 33px;
+  padding: 0px 10px;
+}
+
+.image {
+  padding: 20px;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+}
+/* whatWeDo Container */
+
+.whatWeDoContainer {
+  padding: 24px;
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.whatWeDoSub {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  padding: 5px 0px;
+}
+
+/* Offered Services */
+
+.offeredServices {
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+  justify-content: center;
+  justify-items: center;
+  align-items: flex-end;
+  grid-gap: 48px;
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 1056px) {
+  .offeredServices {
+    grid-template-columns: repeat(2, 320px);
+  }
+}
+
+@media screen and (max-width: 688px) {
+  .offeredServices {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile responsiveness */
+
+@media screen and (max-width: 480px) {
+  .image {
+    padding: 20px 0px;
+  }
+
+  .imageContainer {
+    margin: 0;
+    padding: 0;
+  }
+
+  .whatWeDoContainer {
+    padding: 24px 12px;
+  }
+}

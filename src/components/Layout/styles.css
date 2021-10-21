@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Martel:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+body,
+a,
+button,
+input {
+  font-family: "Baskervville", serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  /* margin-bottom: 16rem; */
+}
+
+main {
+  display: block;
+  flex-direction: column;
+  flex: 1;
+  background-color: white;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+  padding-bottom: 16px;
+}
+
+@media screen and (max-width: 700px){
+  .root {
+    margin-bottom: 22rem;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 24px;
+  }
+}
