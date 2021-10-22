@@ -15,6 +15,7 @@ const content = require("../../content/portfolio")
 
 export default function PortfolioPage() {
   const [translateY, setTranslateY] = React.useState("5%")
+  const [elementScroll, setElemetScroll] = React.useState(0)
 
   const [nodeRef, isVisible] = useInViewPort({ triggerOnce: false })
 
@@ -31,8 +32,10 @@ export default function PortfolioPage() {
           ? 3 + scrollPercent * 10
           : maxHeight - (scrollPercent - 0.3) * 10
 
-      setTranslateY(`${newTranslateY}%`)
-    }
+          setTranslateY(`${newTranslateY}%`)
+          // console.log("document.documentElement.scrollHeight", document.documentElement.scrollHeight)
+        }
+        setElemetScroll(document.documentElement.scrollHeight)
 
     window.addEventListener("scroll", onScroll)
 
@@ -41,12 +44,9 @@ export default function PortfolioPage() {
     }
 
   }, [])
-  const handleSetActive = (to) => {
-    console.log("tooooooooo", to);
-  }
 
   return (
-    <div className={styles.projects}>
+    <div className={styles.projects} id="wrapper">
       <div
         data-sal="slide-up"
         data-sal-delay="150"
@@ -60,7 +60,10 @@ export default function PortfolioPage() {
           {content.description}
         </div>
       </div>
-      <Sidebar />
+
+
+      <Sidebar elementScroll={elementScroll} />
+
       <div className={styles.rowsContainer}>
         {content.projects.map((project, index) => (
           <Element name={`section${index}`} style={{height:"100vh", display:"flex", alignItems:"center"}}>
