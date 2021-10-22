@@ -7,14 +7,14 @@ import ImageCloudinary from "../ImageCloudinary"
 import * as styles from "./portfolio.module.css"
 import TransitionLink from "../TransitionLink"
 import useInViewPort from "../../useInViewPort"
-import { Link } from 'react-scroll';
+import { Link, Element } from 'react-scroll';
+import Sidebar from '../Sidebar'
 
 const rowStyles = [styles.rowStart, styles.rowEnd]
 const content = require("../../content/portfolio")
 
 export default function PortfolioPage() {
   const [translateY, setTranslateY] = React.useState("5%")
-  const [scroll, setScroll] = React.useState(false)
 
   const [nodeRef, isVisible] = useInViewPort({ triggerOnce: false })
 
@@ -32,10 +32,6 @@ export default function PortfolioPage() {
           : maxHeight - (scrollPercent - 0.3) * 10
 
       setTranslateY(`${newTranslateY}%`)
-
-      const topScroll = window.scrollY > 3600;
-      console.log("ssdsdfdf", topScroll)
-      topScroll ? setScroll(true) : setScroll(false);
     }
 
     window.addEventListener("scroll", onScroll)
@@ -46,7 +42,7 @@ export default function PortfolioPage() {
 
   }, [])
   const handleSetActive = (to) => {
-    console.log("tooooooooo",to);
+    console.log("tooooooooo", to);
   }
 
   return (
@@ -64,26 +60,12 @@ export default function PortfolioPage() {
           {content.description}
         </div>
       </div>
-      <div className={styles.links} style={{opacity:scroll && "0"}}>
-        {content.projects.map((project, index) => (
-          <div className={styles.link}>
-            <Link 
-            to={`section${index}`} 
-            activeClass={styles.active} 
-            spy={true} 
-            smooth={true} 
-            offset={50} 
-            duration={500}
-      >Section One</Link>
-          </div>
-
-        ))}
-
-      </div>
+      <Sidebar />
       <div className={styles.rowsContainer}>
         {content.projects.map((project, index) => (
+          <Element name={`section${index}`} style={{height:"100vh", display:"flex", alignItems:"center"}}>
           <div
-            id={`section${index}`}
+
             key={index}
             className={cn([styles.row, rowStyles[index % 2]])}
             // {...(index > 0 && { "data-sal": "slide-up" })}
@@ -91,9 +73,9 @@ export default function PortfolioPage() {
             data-sal-delay="150"
             data-sal-duration="350"
             data-sal-easing="ease-in">
-
             <div className={styles.content}>
               <TransitionLink
+
                 className={styles.images}
                 key={index}
                 cover
@@ -102,17 +84,18 @@ export default function PortfolioPage() {
                 to={`/project/${index}`}>
                 <ImageCloudinary path={project.image} />
               </TransitionLink>
-
-              <div className={styles.shadow3}>
-                <img className={styles.shadow33} src={project.aspectRatio} alt=""
-                  style={{
-                    backgroundColor: project.backgroundColor,
-                    transform: `translate3d(3%, ${translateY}, 0)`
-                  }} />
-              </div>
+              
+                <div className={styles.shadow3} >
+                  <img className={styles.shadow33} src={project.aspectRatio} alt=""
+                    style={{
+                      backgroundColor: project.backgroundColor,
+                      transform: `translate3d(3%, ${translateY}, 0)`
+                    }} />
+                </div>
             </div>
             <div className={styles.titleMobile}>{project.title}</div>
           </div>
+              </Element>
 
         ))}</div>
     </div>
