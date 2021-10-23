@@ -14,8 +14,14 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-transition-link`,
+    // `gatsby-plugin-transition-link`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-plugin-transition-link",
+      options: {
+          layout: require.resolve(`${__dirname}/src/components/Layout/index.js`)
+        }
+   },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
