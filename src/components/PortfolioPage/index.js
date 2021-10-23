@@ -26,13 +26,20 @@ export default function PortfolioPage() {
       const scrollPercent =
         document.documentElement.scrollTop /
         (document.documentElement.scrollHeight - window.innerHeight)
+      // const maxHeight = 15
+      // const newTranslateY =
+      //   scrollPercent < 0.5
+      //     ? 3 + scrollPercent * 10
+      //     : maxHeight - (scrollPercent - 0.3) * 10
+
+      //     setTranslateY(`${newTranslateY}%`)
       const maxHeight = 15
       const newTranslateY =
         scrollPercent < 0.5
-          ? 3 + scrollPercent * 10
-          : maxHeight - (scrollPercent - 0.3) * 10
+          ? 5 + scrollPercent * 20
+          : maxHeight - (scrollPercent - 0.5) * 60
 
-          setTranslateY(`${newTranslateY}%`)
+      setTranslateY(`${newTranslateY}%`)
           // console.log("document.documentElement.scrollHeight", document.documentElement.scrollHeight)
         }
         setElemetScroll(document.documentElement.scrollHeight)
@@ -92,7 +99,7 @@ export default function PortfolioPage() {
                   <img className={styles.shadow33} src={project.aspectRatio} alt=""
                     style={{
                       backgroundColor: project.backgroundColor,
-                      transform: `translate3d(3%, ${translateY}, 0)`
+                      transform: `translate3d(6%, ${translateY}, 0)`
                     }} />
                 </div>
             </div>
