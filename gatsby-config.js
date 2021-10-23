@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-transition-link",
       options: {
-          layout: require.resolve(`${__dirname}/src/components/Layout/index.js`)
+          layout: require.resolve(`${__dirname}/src/components/Layout`)
         }
    },
     {

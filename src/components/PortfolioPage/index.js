@@ -26,13 +26,7 @@ export default function PortfolioPage() {
       const scrollPercent =
         document.documentElement.scrollTop /
         (document.documentElement.scrollHeight - window.innerHeight)
-      // const maxHeight = 15
-      // const newTranslateY =
-      //   scrollPercent < 0.5
-      //     ? 3 + scrollPercent * 10
-      //     : maxHeight - (scrollPercent - 0.3) * 10
-
-      //     setTranslateY(`${newTranslateY}%`)
+  
       const maxHeight = 15
       const newTranslateY =
         scrollPercent < 0.5
@@ -40,7 +34,7 @@ export default function PortfolioPage() {
           : maxHeight - (scrollPercent - 0.5) * 60
 
       setTranslateY(`${newTranslateY}%`)
-          // console.log("document.documentElement.scrollHeight", document.documentElement.scrollHeight)
+  
         }
         setElemetScroll(document.documentElement.scrollHeight)
 
