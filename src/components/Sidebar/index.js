@@ -3,18 +3,27 @@ import { Link, Element } from 'react-scroll';
 import * as styles from "./sidebar.module.css"
 
 const Sidebar = () => {
-    const [scroll, setScroll] = React.useState(false)
+    const [hide, setHide] = React.useState(false)
     useEffect(() => {
         document.addEventListener("scroll", () => {
             let el = document.getElementById("wrapper")
-      const topScroll = Number(window.scrollY) > Number(el.offsetHeight - 580);
-      topScroll ? setScroll(true) : setScroll(false);
+      // const topScroll = Number(window.scrollY) > Number(el.offsetHeight - 585);
+      if(Number(window.scrollY) < 300){
+        setHide(true)
+      }
+      else if( Number(window.scrollY) > Number(el.offsetHeight - 585)){
+        setHide(true)
+      }
+      else{
+        setHide(false)
+
+      }
     });
     
      }, [])
     
     return (
-        <div className={styles.links} style={{ opacity: scroll && "0" }}>
+        <div className={styles.links} style={{ display: hide && "none" }}>
           <div className={styles.link}>
             <Link
               to={`section0`}

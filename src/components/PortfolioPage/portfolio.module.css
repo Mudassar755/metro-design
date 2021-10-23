@@ -108,6 +108,14 @@
 
 /* Mobile responsiveness */
 
+@media screen and (min-width: 769px) {
+  .contentElement{
+    height:100vh; 
+    display:flex;
+    align-items:center;
+  }
+
+}
 @media screen and (max-width: 800px) {
   .row img {
     width: 100%;

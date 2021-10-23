@@ -42,7 +42,7 @@
     width: 30px !important;
   }
 
-  @media screen and (max-width:768px) {
+  @media screen and (max-width:769px) {
       .links{
           display: none;
       }

@@ -66,7 +66,7 @@ export default function PortfolioPage() {
 
       <div className={styles.rowsContainer}>
         {content.projects.map((project, index) => (
-          <Element name={`section${index}`} style={{height:"100vh", display:"flex", alignItems:"center"}}>
+          <Element name={`section${index}`} className={styles.contentElement} >
           <div
 
             key={index}
