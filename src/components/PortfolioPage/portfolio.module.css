@@ -31,7 +31,7 @@
 }
 
 .row {
-  /* margin-bottom: 10vw; */
+  margin-bottom: 10vw;
   margin-right: 3vw;
   max-height: 50vw;
   max-width: 61vh;
@@ -152,7 +152,7 @@
   .row {
     max-height: 51vh;
     display: grid;
-    /* margin-bottom: 15vw; */
+    margin-bottom: 15vw;
   }
 
   .rowStart {

@@ -30,8 +30,8 @@ const Sidebar = () => {
           activeClass={styles.active}
           spy={true}
           smooth={true}
-          offset={50}
-          duration={500}
+      hashSpy={true}
+      offset={-500}
         >1: sidebar should be it's own component</Link>
       </div>
       <div className={styles.link}>
@@ -40,8 +40,9 @@ const Sidebar = () => {
           activeClass={styles.active}
           spy={true}
           smooth={true}
-          offset={50}
-          duration={500}
+          hashSpy={true}
+          offset={-500}
+          // duration={500}
         >2: only visable on desktop</Link>
       </div>
       <div className={styles.link}>
@@ -50,8 +51,9 @@ const Sidebar = () => {
           activeClass={styles.active}
           spy={true}
           smooth={true}
-          offset={50}
-          duration={500}
+          hashSpy={true}
+          offset={-500}
+          // duration={500}
         >3: clicking title should autoscroll to project</Link>
       </div>
       <div className={styles.link}>
@@ -60,8 +62,9 @@ const Sidebar = () => {
           activeClass={styles.active}
           spy={true}
           smooth={true}
-          offset={50}
-          duration={500}
+          hashSpy={true}
+          offset={-500}
+          // duration={500}
         >4: project title needs to highlight when image is centered</Link>
       </div>
       <div className={styles.link}>
@@ -70,8 +73,9 @@ const Sidebar = () => {
           activeClass={styles.active}
           spy={true}
           smooth={true}
-          offset={50}
-          duration={500}
+          hashSpy={true}
+          offset={-500}
+          // duration={500}
         >5: first image is not scalling right</Link>
       </div>
       <div className={styles.link}>
@@ -80,8 +84,9 @@ const Sidebar = () => {
           activeClass={styles.active}
           spy={true}
           smooth={true}
-          offset={50}
-          duration={500}
+          hashSpy={true}
+          offset={-500}
+          // duration={500}
         >6: project image animations need to be corrected</Link>
       </div>
       <div className={styles.link}>
@@ -90,8 +95,9 @@ const Sidebar = () => {
           activeClass={styles.active}
           spy={true}
           smooth={true}
-          offset={50}
-          duration={500}
+          hashSpy={true}
+          offset={-500}
+          // duration={500}
         >7: animation should gradually move back when scrolling </Link>
       </div>
     </div>

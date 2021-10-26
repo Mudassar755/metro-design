@@ -67,9 +67,12 @@ export default function PortfolioPage() {
 
       <div className={styles.rowsContainer}>
         {content.projects.map((project, index) => (
-          <Element name={`section${index}`} className={styles.contentElement} >
+          // <Element name={`section${index}`}
+          //  className={styles.contentElement} 
+          //  className={cn([styles.row, rowStyles[index % 2]])}
+          //  >
           <div
-
+          name={`section${index}`}
             key={index}
             className={cn([styles.row, rowStyles[index % 2]])}
             // {...(index > 0 && { "data-sal": "slide-up" })}
@@ -99,7 +102,7 @@ export default function PortfolioPage() {
             </div>
             <div className={styles.titleMobile}>{project.title}</div>
           </div>
-              </Element>
+              // {/* </Element> */}
 
         ))}</div>
     </div>
